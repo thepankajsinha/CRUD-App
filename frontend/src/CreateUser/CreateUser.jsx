@@ -14,7 +14,7 @@ const CreateUser = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:8500/api/createUser", {name, email, city})
+      .post("https://mern-crud-app-sm5q.onrender.com/api/createUser", {name, email, city})
       .then(() => {toast.success('User created successfully')
         navigate("/"); // redirect back to home page
       })
