@@ -10,7 +10,7 @@ function User() {
   //get all the users from the server
   const getAllUsers = async () => {
     useEffect(() => {
-      axios.get("https://mern-crud-app-sm5q.onrender.com/api/getAllUsers")
+      axios.get("http://localhost:5000/api/getAllUsers")
       .then((res) => setUsers(res.data))
       .catch((err) => console.error(err));
     }, [users, setUsers]);
@@ -20,7 +20,7 @@ function User() {
   //delete a user from the server
   const deleteUser = async (userId) => {
     await axios
-      .delete(`https://mern-crud-app-sm5q.onrender.com/api/deleteUser/${userId}`)
+      .delete(`http://localhost:5000/api/deleteUser/${userId}`)
       .then(() => {toast.success('User deleted successfully')})
       .catch((error) => {console.log(error)})
   };

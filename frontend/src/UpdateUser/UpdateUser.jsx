@@ -14,7 +14,7 @@ const UpdateUser = () => {
 
   // Fetch user data on update user form component mount to populate form fields with current user data
   useEffect(() => {
-    axios.get(`https://mern-crud-app-sm5q.onrender.com/api/getUser/${id}`)
+    axios.get(`http://localhost:5000/api/getUser/${id}`)
       .then((res) => {
         setName(res.data.name);
         setEmail(res.data.email);
@@ -27,7 +27,7 @@ const UpdateUser = () => {
   const submitForm = async (e) => {
     e.preventDefault(); 
     await axios
-    .put(`https://mern-crud-app-sm5q.onrender.com/api/updateUser/${id}`, {name, email, city})
+    .put(`http://localhost:5000/api/updateUser/${id}`, {name, email, city})
     .then(() => {toast.success('User updated successfully')
       navigate("/"); // redirect back to home page
     })
