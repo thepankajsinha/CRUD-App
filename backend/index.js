@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const MONGODB_URL = process.env.MONGODB_URL;
 
 // Connect to MongoDB
