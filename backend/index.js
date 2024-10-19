@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 const MONGODB_URL = process.env.MONGODB_URL;
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URL).then(() => {
-  console.log("Database cconnected successfully");
+  console.log("Database connected successfully");
 });
 
 //Listen server
